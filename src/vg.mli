@@ -193,7 +193,6 @@ module P : sig
       image, in red, the elliptical arc from the left point to the
       right one.  The top row is [~large:false] and the left column
       is [~cw:false]:
-      {%html: <img src="doc-earcs.png" style="width:75mm; height:45mm;"/> %}
   *)
 
   val close : path -> path
@@ -852,6 +851,8 @@ module Vgr : sig
   end
 end
 
+(*
+
 (** {1:basics Basics}
 
     [Vg] is designed to be opened in your module. This defines only
@@ -954,7 +955,6 @@ let gray = I.const (Color.gray 0.5)
 let () = svg_of_usquare gray]}
     The result should be an SVG image with a gray square
     like this:
-{%html: <img src="doc-gray-square.png" style="width:30mm; height:30mm;"/> %}
 
     {2:coordinates Coordinate space}
 
@@ -988,7 +988,6 @@ let gray_circle = I.cut circle gray
 ]}
     Rendered by [svg_of_usquare] the result is:
 
-{%html: <img src="doc-gray-circle.png" style="width:30mm; height:30mm;"/> %}
 
     Note that the background white color surrounding the circle does
     not belong to the image itself, it is the color of the webpage
@@ -1018,7 +1017,6 @@ let circle_outline =
     Below is the result and again, the white you see here is in
     fact {!Gg.Color.void}.
 
-{%html: <img src="doc-circle-outline.png" style="width:30mm; height:30mm;"/> %}
 
     {!I.cut} gives us scissors but to combine the results of cuts we
     need some glue: the {!I.blend} combinator. This combinator takes
@@ -1035,7 +1033,6 @@ let dot = I.blend circle_outline gray_circle
 ]}
     We get:
 
-{%html: <img src="doc-dot.png" style="width:30mm; height:30mm;"/> %}
 
     The order of arguments in {!I.blend} is defined so that images can
     be blended using the left-associative composition operator
@@ -1082,7 +1079,6 @@ let scatter_plot pts pt_width =
 
     Here's the result of [scatter_point] on 800 points with coordinates
     on independent normal distributions.
-{%html: <img src="doc-scatter-plot.png" style="width:40mm; height:40mm;"/> %}
 
     {2 Paths}
 
@@ -1102,7 +1098,6 @@ let scatter_plot pts pt_width =
 
     The image below is made by cutting the outline of the single path [p]
     defined hereafter.
-{%html: <img src="doc-subpaths.png" style="width:30mm; height:30mm;"/> %}
 {[
 let p =
   let rel = true in
@@ -1228,13 +1223,11 @@ I.const Color.black >> I.cut ~area p
         one for each clockwise ones. The resulting sum is the
         winding number. This is usually refered to as the {e non-zero winding
         rule} and is the default for {!I.cut}.
-{%html: <img src="doc-anz.png" style="width:90mm; height:30mm;"/> %}}
     {- \[[`Aeo], [p]\]{_[pt]} is [true] iff the number of
         intersections of [p] with a ray cast from [pt] to infinity in
         any direction is odd (just make sure the ray doesn't intersect
         [p] tangently or at a singularity). This is usually refered
         to as the {e even-odd rule}.
-{%html: <img src="doc-aeo.png" style="width:90mm; height:30mm;"/> %}}
     {- \[[`O o], [p]\]{_[pt]} is [true] iff [pt] is in the outline
         area of [p] as defined by the value [o] of type {!type:P.outline}.
 
@@ -1253,7 +1246,6 @@ I.const Color.black >> I.cut ~area p
 
         The shape of subpath segment jointures is specified in
         [o.join] by a value of type {!P.join}. From left to right:
-{%html: <img src="doc-joins.png" style="width:90mm; height:30mm;"/> %}
         {ul
         {- [`Miter], the outer parallel curves are extended until they
            meet unless the joining angle is smaller than
@@ -1267,7 +1259,6 @@ I.const Color.black >> I.cut ~area p
 
         The shape of subpath (or dashes) end points is specified in
         [o.cap] by a value of type {!P.cap}. From left to right:
-{%html: <img src="doc-caps.png" style="width:90mm; height:20mm;"/> %}
         {ul
         {- [`Butt], end points are square and extend only to the
            exact end point of the path.}
@@ -1549,3 +1540,6 @@ v}
    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   ---------------------------------------------------------------------------*)
+
+*)
+
